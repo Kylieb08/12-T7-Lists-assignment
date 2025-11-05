@@ -31,15 +31,15 @@ namespace _12_T7_Lists_assignment
             {
                 Console.WriteLine("What would you like to do with the list? (enter the number)");
                 Console.WriteLine("-----------------------------------------------------------");
-                Console.WriteLine("1. Sort the list");
-                Console.WriteLine("2. Make a new list");
-                Console.WriteLine("3. Remove all instances of a number from the list");
-                Console.WriteLine("4. Add a value");
-                Console.WriteLine("5. Count all instances of a value");
-                Console.WriteLine("6. Print the largest value");
-                Console.WriteLine("7. Print the smallest value");
-                Console.WriteLine("8. Print the sum and average of the list");
-                Console.WriteLine("9. Determine the most frequently occuring value");
+                Console.WriteLine("1.  Sort the list");
+                Console.WriteLine("2.  Make a new list");
+                Console.WriteLine("3.  Remove all instances of a number from the list");
+                Console.WriteLine("4.  Add a value");
+                Console.WriteLine("5.  Count all instances of a value");
+                Console.WriteLine("6.  Print the largest value");
+                Console.WriteLine("7.  Print the smallest value");
+                Console.WriteLine("8.  Print the sum and average of the list");
+                Console.WriteLine("9.  Determine the most frequently occuring value");
                 Console.WriteLine("10. View the list");
                 Console.WriteLine("11. Quit");
 
