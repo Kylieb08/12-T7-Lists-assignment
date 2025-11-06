@@ -16,7 +16,7 @@ namespace _12_T7_Lists_assignment
 
             int userInput;
 
-            bool done = false;
+            bool doneInt = false;
 
             for (int i = 0; i < 26; i++)
                 numbers.Add(generator.Next(21));
@@ -27,7 +27,7 @@ namespace _12_T7_Lists_assignment
 
             Console.WriteLine();
             Console.WriteLine();
-            while (!done)
+            while (!doneInt)
             {
                 Console.WriteLine("What would you like to do with the list? (enter the number)");
                 Console.WriteLine("-----------------------------------------------------------");
@@ -51,38 +51,55 @@ namespace _12_T7_Lists_assignment
                 switch (userInput)
                 {
                     case 1:
-                        Console.WriteLine("this is case 1");
+                        Console.Clear();
+                        numbers.Sort();
+                        for (int i = 0; i < numbers.Count; i++)
+                            Console.Write($"{numbers[i]}, ");
+                        Console.WriteLine();
                         break;
 
                     case 2:
-                        Console.WriteLine("this is case 2");
+                        Console.Clear();
+                        numbers.Clear();
+                        for (int i = 0; i < 26; i++)
+                            numbers.Add(generator.Next(21));
+                        Console.WriteLine("Here is your new list of numbers:");
+                        for (int i = 0; i < numbers.Count; i++)
+                            Console.Write($"{numbers[i]}, ");
                         break;
 
                     case 3:
+                        Console.Clear();
                         Console.WriteLine("this is case 3");
                         break;
 
                     case 4:
+                        Console.Clear();
                         Console.WriteLine("this is case 4");
                         break;
 
                     case 5:
+                        Console.Clear();
                         Console.WriteLine("this is case 5");
                         break;
 
                     case 6:
+                        Console.Clear();
                         Console.WriteLine("this is case 6");
                         break;
 
                     case 7:
+                        Console.Clear();
                         Console.WriteLine("this is case 7");
                         break;
 
                     case 8:
+                        Console.Clear();
                         Console.WriteLine("this is case 8");
                         break;
 
                     case 9:
+                        Console.Clear();
                         Console.WriteLine("this is case 9");
                         break;
 
@@ -95,7 +112,8 @@ namespace _12_T7_Lists_assignment
                         break;
 
                     case 11:
-                        done = true;
+                        Console.Clear();
+                        doneInt = true;
                         Console.WriteLine("Goodbye");
                         break;
 
