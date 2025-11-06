@@ -14,7 +14,7 @@ namespace _12_T7_Lists_assignment
             Random generator = new Random();
             List<int> numbers = new List<int>();
 
-            int userInput;
+            int userInput, removeNum;
 
             bool doneInt = false;
 
@@ -70,7 +70,16 @@ namespace _12_T7_Lists_assignment
 
                     case 3:
                         Console.Clear();
-                        Console.WriteLine("this is case 3");
+                        Console.WriteLine("Which number would you like to remove?");
+
+                        while (!Int32.TryParse(Console.ReadLine(), out removeNum) || removeNum < 0)
+                            Console.WriteLine("Invalid Input. Please Try Again");
+                        
+                        //only removes one instance
+                        numbers.Remove(removeNum);
+                        Console.WriteLine("Here is your new list of numbers:");
+                        for (int i = 0; i < numbers.Count; i++)
+                            Console.Write($"{numbers[i]}, ");
                         break;
 
                     case 4:
