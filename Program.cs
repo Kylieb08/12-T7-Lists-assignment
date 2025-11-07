@@ -75,11 +75,13 @@ namespace _12_T7_Lists_assignment
                         while (!Int32.TryParse(Console.ReadLine(), out removeNum) || removeNum < 0)
                             Console.WriteLine("Invalid Input. Please Try Again");
                         
-                        //only removes one instance
-                        numbers.Remove(removeNum);
+                        while (numbers.Contains(removeNum))
+                            numbers.Remove(removeNum);
+
                         Console.WriteLine("Here is your new list of numbers:");
                         for (int i = 0; i < numbers.Count; i++)
                             Console.Write($"{numbers[i]}, ");
+                        Console.WriteLine();
                         break;
 
                     case 4:
