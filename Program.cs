@@ -14,7 +14,7 @@ namespace _12_T7_Lists_assignment
             Random generator = new Random();
             List<int> numbers = new List<int>();
 
-            int userInput, removeNum, addNum;
+            int userInput, removeNum, addNum, countNum, count = 0;
 
             bool doneInt = false;
 
@@ -99,8 +99,25 @@ namespace _12_T7_Lists_assignment
 
                     case 5:
                         Console.Clear();
-                        Console.WriteLine("this is case 5");
-                        break;
+                        Console.WriteLine("Which value in the list would you like to count?");
+                        while (!Int32.TryParse(Console.ReadLine(), out countNum) || countNum < 0)
+                            Console.WriteLine("Invalid Input. Please Try Again");
+
+                        if (!numbers.Contains(countNum))
+                            Console.WriteLine($"Your list does not contain {countNum}");
+
+                        else
+                        {
+                            for (int i = 0; i < numbers.Count;i++)
+                            {
+                                if (numbers[i] == countNum)
+                                    count++;
+                            }
+                            Console.WriteLine();
+                            Console.WriteLine($"The number {countNum} appears {count} time(s) in your list");
+                        }
+                        Console.WriteLine();
+                            break;
 
                     case 6:
                         Console.Clear();
