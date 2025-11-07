@@ -6,7 +6,42 @@ namespace _12_T7_Lists_assignment
     {
         static void Main(string[] args)
         {
-            Integers();
+            int userChoice;
+
+            bool done = false;
+
+            while (!done)
+            {
+                Console.Clear();
+                Console.WriteLine("What would you like to do? (enter the number)");
+                Console.WriteLine("---------------------------------------------");
+                Console.WriteLine("1. List of Integers");
+                Console.WriteLine("2. List of Strings");
+                Console.WriteLine("3. Quit");
+
+                while (!Int32.TryParse(Console.ReadLine(), out userChoice) || userChoice < 1 || userChoice > 3);
+                Console.WriteLine("Invalid input. Please try again");
+
+                switch (userChoice)
+                {
+                    case 1:
+                        Console.Clear();
+                        Integers();
+                        break;
+
+                    case 2:
+                        Console.Clear();
+                        Strings();
+                        break;
+
+                    case 3:
+                        Console.Clear();
+                        Console.WriteLine("Goodbye");
+                        done = true;
+                        break;
+                }
+            }
+            
         }
 
         public static void Integers()
@@ -30,6 +65,10 @@ namespace _12_T7_Lists_assignment
             Console.WriteLine();
             while (!doneInt)
             {
+                
+
+                Console.WriteLine();
+
                 Console.WriteLine("What would you like to do with the list? (enter the number)");
                 Console.WriteLine("-----------------------------------------------------------");
                 Console.WriteLine("1.  Sort the list");
@@ -67,6 +106,7 @@ namespace _12_T7_Lists_assignment
                         Console.WriteLine("Here is your new list of numbers:");
                         for (int i = 0; i < numbers.Count; i++)
                             Console.Write($"{numbers[i]}, ");
+                        Console.WriteLine();
                         break;
 
                     case 3:
@@ -75,7 +115,7 @@ namespace _12_T7_Lists_assignment
 
                         while (!Int32.TryParse(Console.ReadLine(), out removeNum) || removeNum < 0)
                             Console.WriteLine("Invalid Input. Please Try Again");
-                        
+
                         while (numbers.Contains(removeNum))
                             numbers.Remove(removeNum);
 
@@ -166,5 +206,11 @@ namespace _12_T7_Lists_assignment
                 }
             }
         }
+
+        public static void Strings()
+        {
+
+        }
+
     }
 }
