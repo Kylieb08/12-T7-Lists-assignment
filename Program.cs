@@ -14,7 +14,7 @@ namespace _12_T7_Lists_assignment
             Random generator = new Random();
             List<int> numbers = new List<int>();
 
-            int userInput, removeNum;
+            int userInput, removeNum, addNum;
 
             bool doneInt = false;
 
@@ -84,7 +84,15 @@ namespace _12_T7_Lists_assignment
 
                     case 4:
                         Console.Clear();
-                        Console.WriteLine("this is case 4");
+                        Console.WriteLine("Which number would you like to add? (positive integers only)");
+                        while (!Int32.TryParse(Console.ReadLine(), out addNum) || addNum < 0)
+                            Console.WriteLine("Invalid Input. Please Try Again");
+                        numbers.Add(addNum);
+                        Console.WriteLine($"{ addNum} has been added to the list");
+                        Console.WriteLine("Here is your new list");
+                        for (int i = 0; i < numbers.Count; i++)
+                            Console.Write($"{numbers[i]}, ");
+                        Console.WriteLine();
                         break;
 
                     case 5:
