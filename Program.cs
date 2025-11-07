@@ -49,7 +49,7 @@ namespace _12_T7_Lists_assignment
             Random generator = new Random();
             List<int> numbers = new List<int>();
 
-            int userInput, removeNum, addNum, countNum, count = 0, max, min, sum;
+            int userInputInt, removeNum, addNum, countNum, count = 0, max, min, sum;
             double average, roundedAverage;
 
             bool doneInt = false;
@@ -83,12 +83,12 @@ namespace _12_T7_Lists_assignment
                 Console.WriteLine("10. View the list");
                 Console.WriteLine("11. Quit");
 
-                while (!Int32.TryParse(Console.ReadLine(), out userInput) || userInput < 1 || userInput > 11);
+                while (!Int32.TryParse(Console.ReadLine(), out userInputInt) || userInputInt < 1 || userInputInt > 11);
                 {
                     Console.WriteLine("Invalid Input. Please Try Again");
                 }
 
-                switch (userInput)
+                switch (userInputInt)
                 {
                     case 1:
                         Console.Clear();
@@ -149,7 +149,7 @@ namespace _12_T7_Lists_assignment
 
                         else
                         {
-                            for (int i = 0; i < numbers.Count;i++)
+                            for (int i = 0; i < numbers.Count; i++)
                             {
                                 if (numbers[i] == countNum)
                                     count++;
@@ -209,8 +209,77 @@ namespace _12_T7_Lists_assignment
 
         public static void Strings()
         {
+            List<string> vegetables = new List<string>();
+            vegetables.Add("CARROT");
+            vegetables.Add("BEET");
+            vegetables.Add("CELERY");
+            vegetables.Add("RADISH");
+            vegetables.Add("CABBAGE");
 
+            bool doneString = false;
+
+            int userInputStrings;
+
+            Console.WriteLine("Here is your list of vegetables");
+            for (int i = 0; i < vegetables.Count; i++)
+                Console.WriteLine($"{i + 1}. {vegetables[i]}");
+
+            while (!doneString)
+            {
+                Console.WriteLine("What would you like to do? (enter the number)");
+                Console.WriteLine("---------------------------------------------");
+                Console.WriteLine("1. Remove a vegetable by index");
+                Console.WriteLine("2. Remove a vegetable by value");
+                Console.WriteLine("3. Search for a vegetable");
+                Console.WriteLine("4. Add a vegetable");
+                Console.WriteLine("5. Sort the list");
+                Console.WriteLine("6. Clear the list");
+                Console.WriteLine("7. Quit");
+
+                while (!Int32.TryParse(Console.ReadLine(), out userInputStrings) || userInputStrings < 1 || userInputStrings > 11) ;
+                {
+                    Console.WriteLine("Invalid Input. Please Try Again");
+                }
+
+                switch (userInputStrings)
+                {
+                    case 1:
+                        Console.Clear();
+                        Console.WriteLine("This is case 1");
+                        break;
+
+                    case 2:
+                        Console.Clear();
+                        Console.WriteLine("This is case 2");
+                        break;
+
+                    case 3:
+                        Console.Clear();
+                        Console.WriteLine("This is case 3");
+                        break;
+
+                    case 4:
+                        Console.Clear();
+                        Console.WriteLine("This is case 4");
+                        break;
+
+                    case 5:
+                        Console.Clear();
+                        Console.WriteLine("This is case 5");
+                        break;
+
+                    case 6:
+                        Console.Clear();
+                        Console.WriteLine("This is case 6");
+                        break;
+
+                    case 7:
+                        Console.Clear();
+                        doneString = true;
+                        Console.WriteLine("Goodbye");
+                        break;
+                }
+            }
         }
-
     }
 }
