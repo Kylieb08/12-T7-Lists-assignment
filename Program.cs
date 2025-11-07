@@ -14,7 +14,8 @@ namespace _12_T7_Lists_assignment
             Random generator = new Random();
             List<int> numbers = new List<int>();
 
-            int userInput, removeNum, addNum, countNum, count = 0, max, min;
+            int userInput, removeNum, addNum, countNum, count = 0, max, min, sum;
+            double average, roundedAverage;
 
             bool doneInt = false;
 
@@ -135,7 +136,12 @@ namespace _12_T7_Lists_assignment
 
                     case 8:
                         Console.Clear();
-                        Console.WriteLine("this is case 8");
+                        sum = numbers.Sum();
+                        average = numbers.Average();
+                        roundedAverage = Math.Round(average, 2);
+                        Console.WriteLine($"The sum of this list is {sum}");
+                        Console.WriteLine($"The average of this list is {roundedAverage}");
+                        Console.WriteLine();
                         break;
 
                     case 9:
