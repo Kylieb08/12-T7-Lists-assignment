@@ -14,7 +14,7 @@ namespace _12_T7_Lists_assignment
             Random generator = new Random();
             List<int> numbers = new List<int>();
 
-            int userInput, removeNum, addNum, countNum, count = 0;
+            int userInput, removeNum, addNum, countNum, count = 0, max, min;
 
             bool doneInt = false;
 
@@ -121,12 +121,16 @@ namespace _12_T7_Lists_assignment
 
                     case 6:
                         Console.Clear();
-                        Console.WriteLine("this is case 6");
+                        max = numbers.Max();
+                        Console.WriteLine($"The largest value in this list is {max}");
+                        Console.WriteLine();
                         break;
 
                     case 7:
                         Console.Clear();
-                        Console.WriteLine("this is case 7");
+                        min = numbers.Min();
+                        Console.WriteLine($"The smallest value in this list is {min}");
+                        Console.WriteLine();
                         break;
 
                     case 8:
