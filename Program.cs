@@ -19,7 +19,7 @@ namespace _12_T7_Lists_assignment
                 Console.WriteLine("2. List of Strings");
                 Console.WriteLine("3. Quit");
 
-                while (!Int32.TryParse(Console.ReadLine(), out userChoice) || userChoice < 1 || userChoice > 3);
+                while (!Int32.TryParse(Console.ReadLine(), out userChoice) || userChoice < 1 || userChoice > 3)
                 Console.WriteLine("Invalid input. Please try again");
 
                 switch (userChoice)
@@ -83,7 +83,7 @@ namespace _12_T7_Lists_assignment
                 Console.WriteLine("10. View the list");
                 Console.WriteLine("11. Quit");
 
-                while (!Int32.TryParse(Console.ReadLine(), out userInputInt) || userInputInt < 1 || userInputInt > 11);
+                while (!Int32.TryParse(Console.ReadLine(), out userInputInt) || userInputInt < 1 || userInputInt > 11)
                 {
                     Console.WriteLine("Invalid Input. Please Try Again");
                 }
@@ -218,7 +218,7 @@ namespace _12_T7_Lists_assignment
 
             bool doneString = false;
 
-            int userInputStrings;
+            int userInputStrings, index, removeVegInt;
 
             string findVegetable, removeVegetable;
 
@@ -238,7 +238,7 @@ namespace _12_T7_Lists_assignment
                 Console.WriteLine("6. Clear the list");
                 Console.WriteLine("7. Quit");
 
-                while (!Int32.TryParse(Console.ReadLine(), out userInputStrings) || userInputStrings < 1 || userInputStrings > 11) ;
+                while (!Int32.TryParse(Console.ReadLine(), out userInputStrings) || userInputStrings < 1 || userInputStrings > 11)
                 {
                     Console.WriteLine("Invalid Input. Please Try Again");
                 }
@@ -247,13 +247,26 @@ namespace _12_T7_Lists_assignment
                 {
                     case 1:
                         Console.Clear();
-                        Console.WriteLine("Which vegetable would you like to remove by index?");
-                        
+                        Console.WriteLine("Here is your list of vegetables");
+                        for (int i = 0; i < vegetables.Count; i++)
+                            Console.WriteLine($"{i + 1}. {vegetables[i]}");
+                        Console.WriteLine("Which vegetable would you like to remove? (enter the number)");
+                        while (!Int32.TryParse(Console.ReadLine(), out removeVegInt) || removeVegInt < 0 || removeVegInt > vegetables.Count)
+                            Console.WriteLine("Invalid Input. Please Try Again");
+
+                        vegetables.RemoveAt(removeVegInt - 1);
+                        Console.WriteLine("Here is your new list of vegetables");
+                        for (int i = 0; i < vegetables.Count; i++)
+                            Console.WriteLine($"{i + 1}. {vegetables[i]}");
                         break;
 
                     case 2:
                         Console.Clear();
-                        Console.WriteLine("Which vegetable would you like to remove by value?");
+                        Console.WriteLine("Here is your list of vegetables");
+                        for (int i = 0; i < vegetables.Count; i++)
+                            Console.WriteLine($"{i + 1}. {vegetables[i]}");
+
+                        Console.WriteLine("Which vegetable would you like to remove? (enter the name)");
                         removeVegetable = Console.ReadLine().ToUpper();
                         if (vegetables.Contains(removeVegetable))
                         {
@@ -268,7 +281,7 @@ namespace _12_T7_Lists_assignment
                             Console.WriteLine($"{removeVegetable} is not in this list");
                         }
 
-                        Console.WriteLine("Here is your list of vegetables");
+                        Console.WriteLine("Here is your new list of vegetables");
                         for (int i = 0; i < vegetables.Count; i++)
                             Console.WriteLine($"{i + 1}. {vegetables[i]}");
                         break;
@@ -281,7 +294,7 @@ namespace _12_T7_Lists_assignment
                         {
                             Console.WriteLine();
                             Console.WriteLine($"{findVegetable} is in this list");
-                            int index = vegetables.IndexOf(findVegetable);
+                            index = vegetables.IndexOf(findVegetable);
                             Console.WriteLine();
                             Console.WriteLine($"The index of {findVegetable} is {index}");
                         }
