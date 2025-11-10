@@ -220,7 +220,7 @@ namespace _12_T7_Lists_assignment
 
             int userInputStrings;
 
-            string findVegetable;
+            string findVegetable, removeVegetable;
 
             Console.WriteLine("Here is your list of vegetables");
             for (int i = 0; i < vegetables.Count; i++)
@@ -247,12 +247,30 @@ namespace _12_T7_Lists_assignment
                 {
                     case 1:
                         Console.Clear();
-                        Console.WriteLine("This is case 1");
+                        Console.WriteLine("Which vegetable would you like to remove by index?");
+                        
                         break;
 
                     case 2:
                         Console.Clear();
-                        Console.WriteLine("This is case 2");
+                        Console.WriteLine("Which vegetable would you like to remove by value?");
+                        removeVegetable = Console.ReadLine().ToUpper();
+                        if (vegetables.Contains(removeVegetable))
+                        {
+                            vegetables.Remove(removeVegetable);
+                            Console.WriteLine();
+                            Console.WriteLine($"{removeVegetable} has been removed");
+                        }
+
+                        else
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine($"{removeVegetable} is not in this list");
+                        }
+
+                        Console.WriteLine("Here is your list of vegetables");
+                        for (int i = 0; i < vegetables.Count; i++)
+                            Console.WriteLine($"{i + 1}. {vegetables[i]}");
                         break;
 
                     case 3:
@@ -267,7 +285,10 @@ namespace _12_T7_Lists_assignment
                             Console.WriteLine();
                             Console.WriteLine($"The index of {findVegetable} is {index}");
                         }
-                        break;
+
+                        else
+                            Console.WriteLine($"{findVegetable} is not in this list");
+                            break;
 
                     case 4:
                         Console.Clear();
