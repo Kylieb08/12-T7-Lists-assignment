@@ -220,6 +220,8 @@ namespace _12_T7_Lists_assignment
 
             int userInputStrings;
 
+            string findVegetable;
+
             Console.WriteLine("Here is your list of vegetables");
             for (int i = 0; i < vegetables.Count; i++)
                 Console.WriteLine($"{i + 1}. {vegetables[i]}");
@@ -255,7 +257,16 @@ namespace _12_T7_Lists_assignment
 
                     case 3:
                         Console.Clear();
-                        Console.WriteLine("This is case 3");
+                        Console.WriteLine("Which vegetable would you like to search for?");
+                        findVegetable = Console.ReadLine().ToUpper();
+                        if (vegetables.Contains(findVegetable))
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine($"{findVegetable} is in this list");
+                            int index = vegetables.IndexOf(findVegetable);
+                            Console.WriteLine();
+                            Console.WriteLine($"The index of {findVegetable} is {index}");
+                        }
                         break;
 
                     case 4:
@@ -265,7 +276,11 @@ namespace _12_T7_Lists_assignment
 
                     case 5:
                         Console.Clear();
-                        Console.WriteLine("This is case 5");
+                        vegetables.Sort();
+                        Console.WriteLine();
+                        Console.WriteLine("Here is your list of vegetables");
+                        for (int i = 0; i < vegetables.Count; i++)
+                            Console.WriteLine($"{i + 1}. {vegetables[i]}");
                         break;
 
                     case 6:
