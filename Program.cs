@@ -220,7 +220,7 @@ namespace _12_T7_Lists_assignment
 
             int userInputStrings, index, removeVegInt;
 
-            string findVegetable, removeVegetable;
+            string findVegetable, removeVegetable, addVegetable;
 
             Console.WriteLine("Here is your list of vegetables");
             for (int i = 0; i < vegetables.Count; i++)
@@ -305,7 +305,12 @@ namespace _12_T7_Lists_assignment
 
                     case 4:
                         Console.Clear();
-                        Console.WriteLine("This is case 4");
+                        Console.WriteLine("Which vegetable would you like to add?");
+                        addVegetable = Console.ReadLine().ToUpper();
+                        vegetables.Add(addVegetable);
+                        Console.WriteLine("Here is your new list of vegetables");
+                        for (int i = 0; i < vegetables.Count; i++)
+                            Console.WriteLine($"{i + 1}. {vegetables[i]}");
                         break;
 
                     case 5:
@@ -319,7 +324,9 @@ namespace _12_T7_Lists_assignment
 
                     case 6:
                         Console.Clear();
-                        Console.WriteLine("This is case 6");
+                        vegetables.Clear();
+                        Console.WriteLine("Your list has been cleared");
+                        Console.WriteLine("It is now empty");
                         break;
 
                     case 7:
