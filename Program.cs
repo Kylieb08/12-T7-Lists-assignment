@@ -186,7 +186,7 @@ namespace _12_T7_Lists_assignment
 
                     case 9:
                         Console.Clear();
-                        Console.WriteLine("this is case 9");
+                        Console.WriteLine();
                         break;
 
                     case 10:
