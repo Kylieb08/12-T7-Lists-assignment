@@ -79,9 +79,8 @@ namespace _12_T7_Lists_assignment
                 Console.WriteLine("6.  Print the largest value");
                 Console.WriteLine("7.  Print the smallest value");
                 Console.WriteLine("8.  Print the sum and average of the list");
-                Console.WriteLine("9.  Determine the most frequently occuring value");
-                Console.WriteLine("10. View the list");
-                Console.WriteLine("11. Quit");
+                Console.WriteLine("9.  View the list");
+                Console.WriteLine("10. Quit");
 
                 while (!Int32.TryParse(Console.ReadLine(), out userInputInt) || userInputInt < 1 || userInputInt > 11)
                 {
@@ -186,18 +185,13 @@ namespace _12_T7_Lists_assignment
 
                     case 9:
                         Console.Clear();
-                        Console.WriteLine();
-                        break;
-
-                    case 10:
-                        Console.Clear();
                         Console.WriteLine("Here is your list of numbers:");
                         for (int i = 0; i < numbers.Count; i++)
                             Console.Write($"{numbers[i]}, ");
                         Console.WriteLine();
                         break;
 
-                    case 11:
+                    case 10:
                         Console.Clear();
                         doneInt = true;
                         Console.WriteLine("Goodbye");
